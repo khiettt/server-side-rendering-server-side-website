@@ -1,0 +1,30 @@
+/* nav */
+.logo-milledoni{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+.divider{
+    margin: 10px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #5BC1A8, transparent);
+}
+nav{
+    display: flex;
+}
+.log-in{
+    width: 50px;
+    height: 50px;
+    background: black;
+    border-radius: 50%;
+}
+.menu{
+    
+}
+/* main */
+/* card */
+.card{
+    border: 1px solid #5BC1A8;
+    border-radius: 10px;
+}

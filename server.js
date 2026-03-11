@@ -5,8 +5,7 @@ import express from 'express'
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
 
-
-console.log('tags')
+// console.log('tags')
 // Doe een fetch naar de data die je nodig hebt
 // const apiResponse = await fetch('...')
 const apiResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products')
@@ -41,10 +40,31 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+     const params = {
+    // Sorteer op naam
+    // 'sort': 'name',
+ 
+    // Geef aan welke data je per persoon wil terugkrijgen
+    'fields': 'name,image,shop_url,description,shop_name,slug,url,amount',
+ 
+    // Combineer meerdere filters
+ 
+  }
+ 
+ const productResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?' + new URLSearchParams(params))
+ 
+const productResponseJSON = await productResponse.json()
+  // console.log(productResponseJSON.data)
+   response.render('index.liquid',{products: productResponseJSON.data})
 })
+
+app.get('/cadeaus/:categorie', async function(request, response) {
+  (request.path)
+  response.render('cadeaus.liquid', )
+})
+
 app.get('/detail', async function (request, response) {
-   response.render('detail.liquid')
+   response.render('detail.liquid', {products: productResponseJSON.data, huidigePath: request.path})
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
@@ -63,4 +83,8 @@ app.set('port', process.env.PORT || 8000)
 app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
+})
+
+app.use((req, res, next) =>{
+  res.status(404).send("Sorry can not find page")
 })
