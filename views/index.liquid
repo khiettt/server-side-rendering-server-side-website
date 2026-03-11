@@ -1,2 +1,31 @@
 {% render 'partials/head.liquid' %}
+
+<nav>
+    <img class="logo-milledoni" src="assets/logo.svg" alt="logo">
+    <div class="log-in"></div>
+    <div class="menu"></div>
+</nav>
+
+    <div class="divider"></div>
+    <h1>Ik zoek een cadeau voor..
+        <span>Mijn moeder</span></h1>
+
+<a href="/cadeaus/voor-fijnproevers">Fijnproevers</a>
+<a href="/cadeaus/voor-moeders">Moeders</a>
+<main>
+        {% for product in products %}
+            <section class="card">
+                <img width="185px" class="product.image" src="{{ product.image }}">
+
+                <h2 class="product.name">{{ product.name }}</h2>
+
+                <p class="product.amount">{{ product.amount }}</p>
+
+                <a href="{{ product.shop_url }}">{{ product.shop_name }}</a>
+            </section>
+        {% endfor %}
+</main>
+
 {% render 'partials/foot.liquid' %}
+
+
