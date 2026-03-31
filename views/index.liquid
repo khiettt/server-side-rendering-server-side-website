@@ -15,11 +15,11 @@
 <main>
         {% for product in products %}
             <section class="card">
-                <img width="185px" class="product.image" src="{{ product.image }}">
+                <img width="185px" class="product.image" src="{{ product.image }}" alt="product">
 
-                <h2 class="product.name">{{ product.name }}</h2>
+                <h2 class="product-name">{{ product.name }}</h2>
 
-                <p class="product.amount">{{ product.amount }}</p>
+                <p class="product-amount">{{ product.amount }}</p>
 
                 <a href="{{ product.shop_url }}">{{ product.shop_name }}</a>
             </section>
