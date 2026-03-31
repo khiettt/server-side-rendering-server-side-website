@@ -47,14 +47,12 @@ app.get('/', async function (request, response) {
     // Geef aan welke data je per persoon wil terugkrijgen
     'fields': 'name,image,shop_url,description,shop_name,slug,url,amount',
  
-    // Combineer meerdere filters
- 
   }
  
  const productResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?' + new URLSearchParams(params))
  
-const productResponseJSON = await productResponse.json()
-  // console.log(productResponseJSON.data)
+  const productResponseJSON = await productResponse.json()
+  console.log(productResponseJSON.data)
    response.render('index.liquid',{products: productResponseJSON.data})
 })
 
