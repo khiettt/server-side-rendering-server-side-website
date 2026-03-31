@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Parkinsans;
+    src: url('/fonts/Parkinsans-VariableFont_wght.ttf') format('truetype');
+}
 /* nav */
 .logo-milledoni{
     display: flex;
@@ -21,6 +25,17 @@ nav{
 }
 .menu{
     
+h1{
+    font-family: 'Parkinsans';
+    font-weight: 300;
+}
+span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: 'Parkinsans';
+    color: #5BC1A8;
 }
 /* main */
 /* card */
