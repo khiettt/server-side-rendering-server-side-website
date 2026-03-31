@@ -24,7 +24,9 @@ nav{
     border-radius: 50%;
 }
 .menu{
+/* .menu{
     
+} */
 h1{
     font-family: 'Parkinsans';
     font-weight: 300;
@@ -40,6 +42,20 @@ span{
 /* main */
 /* card */
 .card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     border: 1px solid #5BC1A8;
     border-radius: 10px;
+}
+img{
+    width: auto;
+    height: auto;
+    padding: 0 50px;
+
+    @media (min-width: 768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }
