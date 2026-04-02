@@ -10,8 +10,18 @@
     <h1>Ik zoek een cadeau voor..
         <span>Mijn moeder</span></h1>
 
-<a href="/cadeaus/voor-fijnproevers">Fijnproevers</a>
-<a href="/cadeaus/voor-moeders">Moeders</a>
+    <div class="filter">    
+        <label for="filter-btn"></label>
+
+        <select name="filter" id="filter-btn">
+            <option value="">Filter</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+    </div>
+
 <main>
         {% for product in products %}
             <section class="card">
