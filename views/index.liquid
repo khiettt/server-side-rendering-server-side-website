@@ -2,7 +2,7 @@
 
 <nav>
     <img class="logo-milledoni" src="assets/logo.svg" alt="logo">
-    <div class="log-in"></div>
+    {% comment %} <div class="log-in"></div> {% endcomment %}
     <div class="menu"></div>
 </nav>
 
@@ -23,9 +23,10 @@
     </div>
 
 <main>
+    <div class="card-container">
         {% for product in products %}
             <section class="card">
-                <img width="185px" class="product.image" src="{{ product.image }}" alt="product">
+                <img width="185px" class="product-image" src="{{ product.image }}" alt="product">
 
                 <h2 class="product-name">{{ product.name }}</h2>
 
@@ -34,6 +35,7 @@
                 <a href="{{ product.shop_url }}">{{ product.shop_name }}</a>
             </section>
         {% endfor %}
+    </div>    
 </main>
 
 {% render 'partials/foot.liquid' %}
